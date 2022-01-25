@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  script:
+    build:
+      context: .
+    ports:
+      - 8084:8084
+    command:
+      gunicorn -w 4 -b 0.0.0.0:8084 main:app
